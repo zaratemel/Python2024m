@@ -14,7 +14,7 @@ class Profesor:
     
     def guardar(self):
 
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('Escolar.db')
         c = conn.cursor()
 
         c.execute('INSERT INTO Profesor(nombre, apellido, curso, email) VALUES (?, ?, ?)',
@@ -27,7 +27,7 @@ class Profesor:
     @staticmethod
     def obtener_Profesor():
 
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('Escolar.db')
         c = conn.cursor()
 
         c.execute('SELECT * FROM Profesor')

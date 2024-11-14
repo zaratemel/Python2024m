@@ -18,7 +18,7 @@ class Estudiante:
 
     def guardar(self):
 
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('Escolar.db')
         c = conn.cursor()
 
         c.execute('INSERT INTO Estudiantes(nombre, apellido, edad, fecha_nacimiento, curso, email) VALUES (?, ?, ?)',
@@ -31,7 +31,7 @@ class Estudiante:
     @staticmethod
     def obtener_estudiante():
 
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('Escolar.db')
         c = conn.cursor()
 
         c.execute('SELECT * FROM Estudiantes')
@@ -42,3 +42,5 @@ class Estudiante:
 
         return Estudiantes
 
+#nose como poner el de eliminar a un estudiante 
+    

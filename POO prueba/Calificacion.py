@@ -12,7 +12,7 @@ class Calificacion:
 
     def guardar(self):
 
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('Escolar.db')
         c = conn.cursor()
 
         c.execute('INSERT INTO Calificacion(Estudiante_id, Materia_id, Calificacion) VALUES (?, ?, ?)',
@@ -25,7 +25,7 @@ class Calificacion:
     @staticmethod
     def obtener_Calificacion():
 
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('Escolar.db')
         c = conn.cursor()
 
         c.execute('SELECT * FROM Calificacion')
@@ -35,3 +35,4 @@ class Calificacion:
         conn.close()
 
         return Calificacion
+

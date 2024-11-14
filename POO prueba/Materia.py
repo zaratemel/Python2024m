@@ -13,7 +13,7 @@ class Materia:
 
     def guardar(self):
 
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('Escolar.db')
         c = conn.cursor()
 
         c.execute('INSERT INTO Materias(nombre, curso, describcion, horario) VALUES (?, ?, ?)',
@@ -26,7 +26,7 @@ class Materia:
     @staticmethod
     def obtener_Materias():
 
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('Escolar.db')
         c = conn.cursor()
 
         c.execute('SELECT * FROM Materias')
