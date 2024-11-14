@@ -16,7 +16,7 @@ class Calificacion:
         c = conn.cursor()
 
         c.execute('INSERT INTO Calificacion(Estudiante_id, Materia_id, Calificacion) VALUES (?, ?, ?)',
-        (self.Estudiante_id, self.Materia_id, self.Id))
+        (self.Estudiante_id, self.Materia_id, self.Calificacion))
 
 
         conn.commit()

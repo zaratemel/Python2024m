@@ -3,10 +3,12 @@ import sqlite3
 
 class Materia:
 
-    def __init__ (self, Nombre_materia, Id, Nombre_profesor):
-        self.Nombre_materia = Nombre_materia
-        self.Id = Id 
-        self.Nombre_profesor = Nombre_profesor
+    def __init__ (self, id_materia, nombre, curso, describcion, horario):
+        self.id_materia = id_materia
+        self.nombre = nombre
+        self.curso = curso
+        self.describcion = describcion
+        self.horario = horario
 
 
     def guardar(self):
@@ -14,8 +16,8 @@ class Materia:
         conn = sqlite3.connect('escolar.db')
         c = conn.cursor()
 
-        c.execute('INSERT INTO Materias(Nombre_materia,Id,Nombre_profesor) VALUES (?, ?, ?)',
-        (self.Nombre_materia, self.Id, self.Nombre_profesor))
+        c.execute('INSERT INTO Materias(nombre, curso, describcion, horario) VALUES (?, ?, ?)',
+        (self.nombre, self.curso, self.describcion, self.horario))
 
 
         conn.commit()

@@ -3,10 +3,13 @@ import sqlite3
 
 class Profesor:
 
-    def __init__ (self, Nombre_profesor, Materia, Id):
-        self.Nombre_profesor = Nombre_profesor
-        self.Materia = Materia
-        self.Id = Id
+    estado = True
+
+    def __init__ (self, dni_id, nombre, apellido, curso, email):
+        self.nombre = nombre
+        self.apellido = apellido
+        self.curso = curso
+        self.email = email
 
     
     def guardar(self):
@@ -14,8 +17,8 @@ class Profesor:
         conn = sqlite3.connect('escolar.db')
         c = conn.cursor()
 
-        c.execute('INSERT INTO Profesor(Nombre_profesor, Materia, Id) VALUES (?, ?, ?)',
-        (self.Nombre_profesor, self.Materia, self.Id))
+        c.execute('INSERT INTO Profesor(nombre, apellido, curso, email) VALUES (?, ?, ?)',
+        (self.nombre, self.apellido, self.curso, self.email))
 
 
         conn.commit()
